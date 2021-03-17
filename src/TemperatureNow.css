@@ -1,0 +1,23 @@
+h2 {
+  font-family: "Yusei Magic", sans-serif;
+  font-size: 55px;
+  text-align: center;
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
+.units {
+  position: relative;
+  top: -58px;
+  left: 275px;
+  font-size: 19px;
+}
+
+.units .active {
+  color: #213c51;
+  cursor: default;
+}
+
+.units a {
+  text-decoration: none;
+}
