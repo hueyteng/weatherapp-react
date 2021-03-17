@@ -1,38 +1,25 @@
-.App {
-  text-align: center;
+body {
+  background-image: url("/Images/mountains.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: sans-serif;
+  color: #213c51;
+  padding: 5px 20px;
+  margin: 10px 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .container {
+  max-width: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .card {
+  display: block;
+  margin: 20px auto;
+  width: 37%;
+  min-width: 500px;
+  border-radius: 5%;
+  background: rgba(255, 255, 255, 0.8);
+  border: 3px solid #3c605d;
+  padding: 20px auto;
 }
