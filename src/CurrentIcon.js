@@ -12,7 +12,7 @@ export default function CurrentIcon() {
         src={weatherData.imgUrl}
         alt="current-weather"
         id="weather-icon"
-      />
+      ></img>
     </div>
   );
 }
