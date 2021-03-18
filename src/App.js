@@ -8,6 +8,7 @@ import Description from "./Description";
 import CurrentIcon from "./CurrentIcon";
 import TemperatureNow from "./TemperatureNow";
 import FeelsLike from "./FeelsLike";
+import Forecast from "./Forecast";
 import Footer from "./Footer";
 
 export default function App() {
@@ -22,6 +23,8 @@ export default function App() {
             <CurrentIcon />
             <TemperatureNow />
             <FeelsLike />
+            <Forecast />
+            
           </div>
         </div>
         <Footer />

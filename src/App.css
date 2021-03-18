@@ -23,3 +23,9 @@ body {
   border: 3px solid #3c605d;
   padding: 20px auto;
 }
+
+hr {
+  display: block;
+  margin: 10px auto;
+  max-width: 90%;
+}
