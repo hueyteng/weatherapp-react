@@ -9,8 +9,8 @@ export default function CurrentIcon() {
     <div className="CurrentIcon">
       <img
         class="current-icon"
-        src={weatherData.imgUrl}
-        alt="current weather"
+        src={weatherData.imgUrl} 
+        alt="weather"
         id="weather-icon"
       />
     </div>
