@@ -23,8 +23,10 @@ export default function App() {
             <CurrentIcon />
             <TemperatureNow />
             <FeelsLike />
+
+            < hr/>
             <Forecast />
-            
+
           </div>
         </div>
         <Footer />

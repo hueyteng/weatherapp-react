@@ -4,21 +4,19 @@ import "./Forecast.css";
 export default function Forecast() {
     return (
         <div className="Forecast">
-      <div className="row ">
-        <div class="col-2">
+      <div className="row">
+        <div className="col-2">
           <h4>00:00</h4>
-          <img
-            src="http://openweathermap.org/img/wn/02d@2x.png"
-            className="forecast"
+          <img src="Images/02d.png"
+            className="forecast-image"
             alt=""
           />
           
         </div>
 
-        <div class="col-2">
+        <div className="col-2">
           <h4>03:00</h4>
-          <img
-            src="http://openweathermap.org/img/wn/02d@2x.png"
+          <img src="Images/01d.png"
             id="weather-icon"
             className="forecast"
             alt=""
@@ -26,10 +24,9 @@ export default function Forecast() {
           
         </div>
 
-        <div class="col-2">
+        <div className="col-2">
           <h4>06:00</h4>
-          <img
-            src="http://openweathermap.org/img/wn/02d@2x.png"
+          <img src="Images/03d.png"
             id="weather-icon"
             className="forecast"
             alt=""
@@ -37,20 +34,18 @@ export default function Forecast() {
           
         </div>
 
-        <div class="col-2">
+        <div className="col-2">
           <h4>09:00</h4>
-          <img
-            src="http://openweathermap.org/img/wn/02d@2x.png"
+          <img src="Images/04d.png"
             id="weather-icon"
             className="forecast"
             alt=""
           />
           
 
-        <div class="col-2">
+        <div className="col-2">
           <h4>12:00</h4>
-          <img
-            src="http://openweathermap.org/img/wn/02d@2x.png"
+          <img src="Images/02d.png"
             id="weather-icon"
             className="forecast"
             alt=""
