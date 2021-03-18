@@ -11,6 +11,7 @@ export default function Forecast() {
             className="forecast-image"
             alt=""
           />
+          <h4>32°</h4>
           
         </div>
 
@@ -21,7 +22,8 @@ export default function Forecast() {
             className="forecast"
             alt=""
           />
-          
+          <h4>32°</h4>
+        
         </div>
 
         <div className="col-2">
@@ -31,6 +33,7 @@ export default function Forecast() {
             className="forecast"
             alt=""
           />
+          <h4>32°</h4>
           
         </div>
 
@@ -41,6 +44,7 @@ export default function Forecast() {
             className="forecast"
             alt=""
           />
+          <h4>32°</h4>
         
         </div>
 
@@ -51,6 +55,7 @@ export default function Forecast() {
             className="forecast"
             alt=""
           />
+          <h4>32°</h4>
         
         </div>
 
@@ -61,6 +66,7 @@ export default function Forecast() {
             className="forecast"
             alt=""
           />
+          <h4>32°</h4>
           
         </div>
       </div>
