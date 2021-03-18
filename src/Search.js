@@ -15,7 +15,7 @@ export default function Search() {
           />
           <button type="submit" class="btn btn-info" id="search-button">
             <i class="fas fa-search"></i>
-          </button>
+          </button>{""}
 
           <button type="submit" class="btn btn-secondary" id="location-button">
             <i class="fas fa-location-arrow"></i>
