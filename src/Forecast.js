@@ -41,7 +41,8 @@ export default function Forecast() {
             className="forecast"
             alt=""
           />
-          
+        
+        </div>
 
         <div className="col-2">
           <h4>12:00</h4>
@@ -50,10 +51,19 @@ export default function Forecast() {
             className="forecast"
             alt=""
           />
+        
+        </div>
+
+        <div className="col-2">
+          <h4>15:00</h4>
+          <img src="Images/09d.png"
+            id="weather-icon"
+            className="forecast"
+            alt=""
+          />
           
         </div>
       </div>
-    </div>
     </div>
     );
 }
