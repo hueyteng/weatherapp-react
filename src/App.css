@@ -5,27 +5,22 @@ body {
   background-size: cover;
   font-family: sans-serif;
   color: #213c51;
-  padding: 5px 20px;
-  margin: 10px 20px;
+  padding: 5px 10px;
+  margin: 10px 10px;
 }
 
 .App .container {
   max-width: 500;
+  display: block;
 }
 
-.App .card {
+card {
   display: block;
-  margin: 20px auto;
+  margin: 20px 10px;
   width: 37%;
   min-width: 500px;
   border-radius: 5%;
   background: rgba(255, 255, 255, 0.8);
   border: 3px solid #3c605d;
-  padding: 20px auto;
-}
-
-.App .hr {
-  display: block;
-  margin: 10px auto;
-  max-width: 90%;
+  padding: 20px 10px;
 }
