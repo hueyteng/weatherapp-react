@@ -18,11 +18,11 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
         ready: true,
-        city: response.data.name,
+        city: response.data.name.toUpperCase(),
         temperature: Math.round(response.data.main.temp),
         humidity: Math.round(response.data.main.humidity),
         wind: Math.round(response.data.wind.speed),
-        description: response.data.weather[0].desciption,
+        description: response.data.weather[0].description,
         feelsLike: Math.round(response.data.main.feels_like)
         
     });
@@ -33,8 +33,8 @@ export default function Weather(props) {
   return (
     <div className="Weather">
             <Search />
-            <City />
-            <Description data={weatherData}/>
+            <City data={weatherData} />
+            <Description data={weatherData} />
             <CurrentIcon />
             <TemperatureNow />
             <FeelsLike />

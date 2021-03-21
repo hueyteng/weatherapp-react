@@ -1,13 +1,10 @@
 import React from "react";
 import "./City.css";
 
-export default function City() {
-  let defaultCity = {
-    city: "KUALA LUMPUR"
-  };
+export default function City(props) {
   return (
     <div className="City">
-      <h1>{defaultCity.city}</h1>
+      <h1>{props.data.city}</h1>
     </div>
   );
 }

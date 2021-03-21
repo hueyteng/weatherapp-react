@@ -12,8 +12,9 @@ export default function Description(props) {
         <strong>Humidity:</strong> {props.data.humidity}%
       </div>
 
-      <div className="col-6" id="current-conditions">
-        Light Rain
+      <div className="col-6" id="conditions"><span className="text-capitalize">
+        {props.data.description}
+      </span >
       </div>
 
       <div className="col-6" id="wind">
