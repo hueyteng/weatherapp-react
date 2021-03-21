@@ -8,19 +8,3 @@ body {
   padding: 5px 10px;
   margin: 10px 10px;
 }
-
-.App .container {
-  max-width: 500;
-  display: block;
-}
-
-card {
-  display: block;
-  margin: 20px 10px;
-  width: 37%;
-  min-width: 500px;
-  border-radius: 5%;
-  background: rgba(255, 255, 255, 0.8);
-  border: 3px solid #3c605d;
-  padding: 20px 10px;
-}

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
+
 import "./Weather.css";
 import Search from "./Search";
 import City from "./City";
@@ -8,8 +11,6 @@ import CurrentIcon from "./CurrentIcon";
 import TemperatureNow from "./TemperatureNow";
 import FeelsLike from "./FeelsLike";
 import Forecast from "./Forecast";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from "react-loader-spinner";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -32,6 +33,9 @@ export default function Weather(props) {
   if (weatherData.ready) {
   return (
     <div className="Weather">
+        <div className="container">
+        <div className="card">
+          <div className="card-body">
             <Search />
             <City data={weatherData} />
             <Description data={weatherData} />
@@ -42,11 +46,13 @@ export default function Weather(props) {
             <Forecast />
 
           </div>
+          </div>
+          </div>
+          </div>
   );
 } else {
 
   const apiKey = "86c2f666f31a39c50f5fcfdde17550ce";
-  let city = "Kuala Lumpur";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(handleResponse);
 

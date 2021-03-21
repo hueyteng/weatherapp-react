@@ -3,8 +3,8 @@ import "./FeelsLike.css";
 
 export default function FeelsLike() {
   return (
-    <div>
-      <h3 className="temperature-like" id="feels-like">
+    <div className="FeelsLike">
+      <h3>
         Feels like <strong>34°</strong>
       </h3>
     </div>

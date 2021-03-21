@@ -3,6 +3,7 @@ import "./Description.css";
 
 export default function Description(props) {
   return (
+    <div className="Description">
     <div className="row" id="details">
       <div className="col-6" id="current-date-time">
         Tuesday, 21:40
@@ -20,6 +21,7 @@ export default function Description(props) {
       <div className="col-6" id="wind">
         <strong>Wind:</strong> {props.data.wind} Mph
       </div>
+    </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import "./TemperatureNow.css";
 
 export default function TemperatureNow() {
   return (
-    <div>
+    <div className="CurrentTemp">
       <h2 className="temperature">33</h2>
       <span className="units">
         <span href="/" id="celsius-link" className="active">
