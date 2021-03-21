@@ -12,15 +12,23 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
 export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
-    setWeatherData(response.data.main.temp);
-    setReady(true);
+    setWeatherData({
+        ready: true,
+        city: response.data.name,
+        temperature: Math.round(response.data.main.temp),
+        humidity: Math.round(response.data.main.humidity),
+        wind: Math.round(response.data.wind.speed),
+        description: response.data.weather[0].desciption
+        
+
+    });
+    
   }
 
-  if (ready) {
+  if (weatherData.ready) {
   return (
     <div className="Weather">
             <Search />
