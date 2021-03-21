@@ -11,8 +11,9 @@ import Forecast from "./Forecast";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
@@ -21,9 +22,9 @@ export default function Weather() {
         temperature: Math.round(response.data.main.temp),
         humidity: Math.round(response.data.main.humidity),
         wind: Math.round(response.data.wind.speed),
-        description: response.data.weather[0].desciption
+        description: response.data.weather[0].desciption,
+        feelsLike: Math.round(response.data.main.feels_like)
         
-
     });
     
   }
@@ -33,7 +34,7 @@ export default function Weather() {
     <div className="Weather">
             <Search />
             <City />
-            <Description />
+            <Description data={weatherData}/>
             <CurrentIcon />
             <TemperatureNow />
             <FeelsLike />

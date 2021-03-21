@@ -1,7 +1,7 @@
 import React from "react";
 import "./Description.css";
 
-export default function Description() {
+export default function Description(props) {
   return (
     <div className="row" id="details">
       <div className="col-6" id="current-date-time">
@@ -9,7 +9,7 @@ export default function Description() {
       </div>
 
       <div className="col-6" id="humidity">
-        <strong>Humidity:</strong> 73%
+        <strong>Humidity:</strong> {props.data.humidity}%
       </div>
 
       <div className="col-6" id="current-conditions">
@@ -17,7 +17,7 @@ export default function Description() {
       </div>
 
       <div className="col-6" id="wind">
-        <strong>Wind:</strong> 11mph
+        <strong>Wind:</strong> {props.data.wind} Mph
       </div>
     </div>
   );
