@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React from "react";
 import Weather from "./Weather";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";

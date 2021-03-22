@@ -30,15 +30,32 @@ export default function Weather(props) {
     
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+  
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+  const apiKey = "86c2f666f31a39c50f5fcfdde17550ce";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
+  }
+  
+
   if (weatherData.ready) {
   return (
     <div className="Weather">
         <div className="container">
         <div className="card">
           <div className="card-body">
-            <div className="Search">
-      <form>
-        <div class="mb-3">
+
+    <div className="Search">
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
           <input
             type="text"
             size="33"
@@ -46,14 +63,15 @@ export default function Weather(props) {
             placeholder="Enter City Name"
             autocomplete="off"
             autoFocus="on"
-            
+            onChange={handleCityChange}
           />
+         
           <button type="submit" className="btn btn-info" id="search-button">
-            <i className="fas fa-search"></i>
+            <i class="fas fa-search"></i>
           </button>
 
           <button type="submit" className="btn btn-secondary" id="location-button">
-            <i className="fas fa-location-arrow"></i>
+            <i class="fas fa-location-arrow"></i>
           </button>
         </div>
       </form>
@@ -73,10 +91,7 @@ export default function Weather(props) {
           </div>
   );
 } else {
-
-  const apiKey = "86c2f666f31a39c50f5fcfdde17550ce";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleResponse);
+    search();
 
       return (
       <Loader
@@ -89,4 +104,4 @@ export default function Weather(props) {
     );
   
 }
-}
+  }
