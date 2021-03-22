@@ -1,10 +1,10 @@
 import React from "react";
 import "./TemperatureNow.css";
 
-export default function TemperatureNow() {
+export default function TemperatureNow(props) {
   return (
     <div className="CurrentTemp">
-      <h2 className="temperature">33</h2>
+      <h2> {props.data.temperature} </h2>
       <span className="units">
         <span href="/" id="celsius-link" className="active">
           °C

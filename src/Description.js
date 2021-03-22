@@ -1,12 +1,13 @@
 import React from "react";
 import "./Description.css";
+import FormattedDate from "./FormattedDate";
 
 export default function Description(props) {
   return (
     <div className="Description">
     <div className="row" id="details">
       <div className="col-6" id="current-date-time">
-        Tuesday, 21:40
+        <FormattedDate date={props.data.date} />
       </div>
 
       <div className="col-6" id="humidity">

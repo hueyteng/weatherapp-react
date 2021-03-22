@@ -4,8 +4,8 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
 import "./Weather.css";
-import Search from "./Search";
 import City from "./City";
+import FormattedDate from "./FormattedDate";
 import Description from "./Description";
 import CurrentIcon from "./CurrentIcon";
 import TemperatureNow from "./TemperatureNow";
@@ -20,6 +20,7 @@ export default function Weather(props) {
     setWeatherData({
         ready: true,
         city: response.data.name.toUpperCase(),
+        date: new Date(response.data.dt * 1000),
         temperature: Math.round(response.data.main.temp),
         humidity: Math.round(response.data.main.humidity),
         wind: Math.round(response.data.wind.speed),
@@ -36,12 +37,35 @@ export default function Weather(props) {
         <div className="container">
         <div className="card">
           <div className="card-body">
-            <Search />
+            <div className="Search">
+      <form>
+        <div class="mb-3">
+          <input
+            type="text"
+            size="33"
+            id="search-city"
+            placeholder="Enter City Name"
+            autocomplete="off"
+            autoFocus="on"
+            
+          />
+          <button type="submit" className="btn btn-info" id="search-button">
+            <i className="fas fa-search"></i>
+          </button>
+
+          <button type="submit" className="btn btn-secondary" id="location-button">
+            <i className="fas fa-location-arrow"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+
             <City data={weatherData} />
+            <FormattedDate data={weatherData} />
             <Description data={weatherData} />
             <CurrentIcon />
-            <TemperatureNow />
-            <FeelsLike />
+            <TemperatureNow data={weatherData} />
+            <FeelsLike data={weatherData} />
             < hr/>
             <Forecast />
 
