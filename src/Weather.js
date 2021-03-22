@@ -5,7 +5,6 @@ import Loader from "react-loader-spinner";
 
 import "./Weather.css";
 import City from "./City";
-import FormattedDate from "./FormattedDate";
 import Description from "./Description";
 import CurrentIcon from "./CurrentIcon";
 import TemperatureNow from "./TemperatureNow";
@@ -61,7 +60,6 @@ export default function Weather(props) {
     </div>
 
             <City data={weatherData} />
-            <FormattedDate data={weatherData} />
             <Description data={weatherData} />
             <CurrentIcon />
             <TemperatureNow data={weatherData} />
