@@ -6,7 +6,7 @@ import Loader from "react-loader-spinner";
 import "./Weather.css";
 import City from "./City";
 import Description from "./Description";
-import WeatherIcon from "./WeatherIcon";
+import CurrentIcon from "./CurrentIcon";
 import TemperatureNow from "./TemperatureNow";
 import FeelsLike from "./FeelsLike";
 import Forecast from "./Forecast";
@@ -24,7 +24,7 @@ export default function Weather(props) {
         humidity: Math.round(response.data.main.humidity),
         wind: Math.round(response.data.wind.speed),
         description: response.data.weather[0].description,
-        icon: response.data.weather[0].icon,
+        icon: `Images/${response.data.weather[0].icon}.png`,
         feelsLike: Math.round(response.data.main.feels_like)
         
     });
@@ -80,7 +80,7 @@ export default function Weather(props) {
 
             <City data={weatherData} />
             <Description data={weatherData} />
-            <WeatherIcon code={weatherData.icon} />
+            <CurrentIcon data={weatherData} />
             <TemperatureNow data={weatherData} />
             <FeelsLike data={weatherData} />
             < hr/>
