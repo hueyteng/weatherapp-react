@@ -81,7 +81,7 @@ export default function Weather(props) {
             <City data={weatherData} />
             <Description data={weatherData} />
             <CurrentIcon data={weatherData} />
-            <Temperature data={weatherData} />
+            <Temperature celsius={weatherData.temperature} />
             <FeelsLike data={weatherData} />
             < hr/>
             <Forecast />
