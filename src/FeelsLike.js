@@ -1,6 +1,5 @@
 import React from "react";
 import "./FeelsLike.css";
-import "./WeatherTemperature";
 
 export default function FeelsLike(props) {
 
