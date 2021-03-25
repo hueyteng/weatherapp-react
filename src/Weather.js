@@ -7,7 +7,7 @@ import "./Weather.css";
 import City from "./City";
 import Description from "./Description";
 import CurrentIcon from "./CurrentIcon";
-import Temperature from "./Temperature";
+import WeatherTemperature from "./WeatherTemperature";
 import FeelsLike from "./FeelsLike";
 import Forecast from "./Forecast";
 
@@ -81,7 +81,7 @@ export default function Weather(props) {
             <City data={weatherData} />
             <Description data={weatherData} />
             <CurrentIcon data={weatherData} />
-            <Temperature celsius={weatherData.temperature} />
+            <WeatherTemperature celsius={weatherData.temperature} />
             <FeelsLike data={weatherData} />
             < hr/>
             <Forecast />
