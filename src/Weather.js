@@ -85,7 +85,7 @@ export default function Weather(props) {
             <WeatherTemperature celsius={weatherData.temperature} unit={unit} setUnit={setUnit} />
             <FeelsLike data={weatherData} unit={unit}/>
             < hr/>
-            <Forecast />
+            <Forecast city={weatherData.city} unit={unit}/>
 
           </div>
           </div>

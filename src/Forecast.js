@@ -1,75 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import ForecastPreview from "./ForecastPreview";
 import "./Forecast.css";
 
-export default function Forecast() {
-    return (
-        <div className="Forecast">
-      <div className="row">
-        <div className="col-2">
-          <h4>00:00</h4>
-          <img src="Images/02d.png"
-            className="forecast-image"
-            alt=""
-          />
-          <h4>32°</h4>
-          
-        </div>
+export default function Forecast(props) {
+  const [loaded, setLoaded] = useState(false);
+  const [forecast, setForecast] = useState(null);
 
-        <div className="col-2">
-          <h4>03:00</h4>
-          <img src="Images/01d.png"
-            id="weather-icon"
-            className="forecast"
-            alt=""
-          />
-          <h4>32°</h4>
-        
-        </div>
+  function displayForecast(response) {
+    setForecast(response.data);
+    setLoaded(true);
+  }
 
-        <div className="col-2">
-          <h4>06:00</h4>
-          <img src="Images/03d.png"
-            id="weather-icon"
-            className="forecast"
-            alt=""
-          />
-          <h4>32°</h4>
-          
+if (loaded && props.city === forecast.city.name) {
+  return (
+    <div className="Forecast row">
+          <ForecastPreview data={forecast.list[0]} />
+          <ForecastPreview data={forecast.list[1]} />
+          <ForecastPreview data={forecast.list[2]} />
+          <ForecastPreview data={forecast.list[3]} />
+          <ForecastPreview data={forecast.list[4]} />
+          <ForecastPreview data={forecast.list[5]} />
         </div>
+  );
 
-        <div className="col-2">
-          <h4>09:00</h4>
-          <img src="Images/04d.png"
-            id="weather-icon"
-            className="forecast"
-            alt=""
-          />
-          <h4>32°</h4>
-        
-        </div>
+} else {
+  let apiKey = "86c2f666f31a39c50f5fcfdde17550ce";
+  let url = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(displayForecast);
 
-        <div className="col-2">
-          <h4>12:00</h4>
-          <img src="Images/02d.png"
-            id="weather-icon"
-            className="forecast"
-            alt=""
-          />
-          <h4>32°</h4>
-        
-        </div>
-
-        <div className="col-2">
-          <h4>15:00</h4>
-          <img src="Images/09d.png"
-            id="weather-icon"
-            className="forecast"
-            alt=""
-          />
-          <h4>32°</h4>
-          
-        </div>
-      </div>
-    </div>
-    );
+    return null;
+}
 }
