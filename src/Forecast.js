@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import ForecastPreview from "./ForecastPreview";
+import axios from "axios";
 import "./Forecast.css";
 
 export default function Forecast(props) {
@@ -25,10 +25,10 @@ if (loaded && props.city === forecast.city.name) {
   );
 
 } else {
-  let apiKey = "86c2f666f31a39c50f5fcfdde17550ce";
-  let url = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
-  axios.get(url).then(displayForecast);
+  const apiKey = "86c2f666f31a39c50f5fcfdde17550ce";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 
-    return null;
+    return "Loading..."
 }
 }

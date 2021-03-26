@@ -8,21 +8,31 @@ function hours() {
     return `${hours}:00`;
 }
 
-function TemperatureMax() {
-    let temperature = Math.round(props.data.main.temp_max);
-    return `${temperature}°`;
+function celsiustemp() {
+    let temp = Math.round(props.data.main.temp);
+    return `${temp}°C`;
 }
 
-function TemperatureMin() {
-    let temperature = Math.round(props.data.main.temp_min);
-    return `${temperature}°`;
+function fahrenheittemp() {
+    let temp = Math.round((props.data.main.temp * 9) / 5 + 32);
+    return `${temp}°F`;
 }
 
+if (props.unit === "celsius") {
 return (
    <div className="ForecastPreview col">
         <h4> {hours()} </h4>
         <ForecastIcons code={props.data.weather[0].icon} />
-        <span className="TemperatureMax">{TemperatureMax()}</span> | <span className="TemperatureMin">{TemperatureMin()}</span>
+        <span className="ForecastTemp"> {celsiustemp()} </span>
     </div>
-);
+)
+} else {
+    return (
+        <div className="ForecastPreview col">
+        <p className="ForecastHours"> {hours()} </p>
+        <ForecastIcons code={props.data.weather[0].icon} />
+        <span className="ForecastTemp"> {fahrenheittemp()} </span>
+    </div>
+    );
+}
 }
