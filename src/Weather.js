@@ -31,6 +31,12 @@ export default function Weather(props) {
     });
   }
 
+  function search() {
+    const apiKey = "c9bb4c07d87b1dd0afbb2c68a3814742";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -40,21 +46,15 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
-  function search() {
-    const apiKey = "c9bb4c07d87b1dd0afbb2c68a3814742";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-  }
-
   function searchLocation(position) {
     const apiKey = "c9bb4c07d87b1dd0afbb2c68a3814742";
-    let longitude = position.coords.longitude;
     let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
-  function getPosition(event) {
+  function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
@@ -80,16 +80,15 @@ export default function Weather(props) {
           />
          
           <button className="btn btn-info" type="submit" id="search-button">
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search" />
           </button>
 
-          <button className="btn btn-secondary" onClick={getPosition} type="button" id="current-location-button">
-            <i class="fas fa-location-arrow"></i>
+          <button onClick={getCurrentPosition} className="btn btn-secondary" type="button" id="current-location-button">
+            <i className="fas fa-location-arrow" />
           </button>
       </div>
       </form> 
-    </div>
-
+</div>
             <City data={weatherData} />
             <Description data={weatherData} />
             <CurrentIcon data={weatherData} />
