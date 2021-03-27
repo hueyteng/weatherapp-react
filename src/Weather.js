@@ -71,7 +71,7 @@ export default function Weather(props) {
         <div className="mb-3">
           <input
             type="text"
-            size="30"
+            size="35"
             id="search-city"
             placeholder="Enter City Name"
             autocomplete="off"
