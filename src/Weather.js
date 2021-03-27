@@ -41,11 +41,23 @@ export default function Weather(props) {
   }
 
   function search() {
-  const apiKey = "c9bb4c07d87b1dd0afbb2c68a3814742";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleResponse);
+    const apiKey = "c9bb4c07d87b1dd0afbb2c68a3814742";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
   }
-  
+
+  function searchLocation(position) {
+    const apiKey = "c9bb4c07d87b1dd0afbb2c68a3814742";
+    let longitude = position.coords.longitude;
+    let latitude = position.coords.latitude;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function getPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
 
   if (weatherData.ready) {
   return (
@@ -67,15 +79,15 @@ export default function Weather(props) {
             onChange={handleCityChange}
           />
          
-          <button type="submit" className="btn btn-info" id="search-button">
+          <button className="btn btn-info" type="submit" id="search-button">
             <i class="fas fa-search"></i>
           </button>
 
-          <button type="submit" className="btn btn-secondary" id="location-button">
+          <button className="btn btn-secondary" onClick={getPosition} type="button" id="current-location-button">
             <i class="fas fa-location-arrow"></i>
           </button>
-        </div>
-      </form>
+      </div>
+      </form> 
     </div>
 
             <City data={weatherData} />
