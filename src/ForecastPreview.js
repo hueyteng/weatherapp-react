@@ -21,7 +21,7 @@ function fahrenheittemp() {
 if (props.unit === "celsius") {
 return (
    <div className="ForecastPreview col">
-        <h4> {hours()} </h4>
+        <p className="ForecastHours"> {hours()} </p>
         <ForecastIcons code={props.data.weather[0].icon} />
         <span className="ForecastTemp"> {celsiustemp()} </span>
     </div>
