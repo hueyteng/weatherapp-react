@@ -19,7 +19,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
         ready: true,
-        city: response.data.name.toUpperCase(),
+        city: response.data.name,
         date: new Date(response.data.dt * 1000),
         temperature: Math.round(response.data.main.temp),
         humidity: Math.round(response.data.main.humidity),
@@ -29,7 +29,6 @@ export default function Weather(props) {
         feelsLike: Math.round(response.data.main.feels_like)
         
     });
-    
   }
 
   function handleSubmit(event) {
